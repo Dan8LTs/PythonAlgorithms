@@ -1,4 +1,3 @@
-'''
 def matryoshka(n):
     if n == 1:
         print("Min matryoshka")
@@ -6,7 +5,7 @@ def matryoshka(n):
         print("matryoshka top, n=", n)
         matryoshka(n-1)
         print("matryoshka bottom, n=", n)
-matryoshka(100)
+matryoshka(10)
 
 '''
 import graphics as gr
@@ -49,4 +48,4 @@ def exp(a, n):# a >= 0
     else:
         return exp(a, n-1) * a
 print(exp(5, 5))
-'''
+
