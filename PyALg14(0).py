@@ -1,7 +1,7 @@
 s = "Hi, Story!"
 print(type(s))
 # оператор присваивания - ссылка
-s = 5+8+6
+s = 5 + 8 + 6
 print(s)
 a = 3
 b = 5
@@ -48,4 +48,4 @@ for x in 1, 6, 3, 5:
 
 print()
 for i in range(10, 1, -1):
-    print(i, end = " ")
+    print(i, end=" ")

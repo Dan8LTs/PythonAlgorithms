@@ -4,6 +4,8 @@ def factorial(n):
     if n == 0:
         return 1
     return factorial(n - 1) * n
+
+
 print(factorial(5))
 
 # динамическое программирование - запись результатов выполнения алгоритма в массив
@@ -12,19 +14,23 @@ n = 5
 f = [None] * (n + 1)
 f[0] = 1
 for i in range(1, n + 1):
-    f[i] = f[i-1] * i
+    f[i] = f[i - 1] * i
 print(f[5])
+
 
 # Числа Фиббоначи
 # рекурсия
 # параметр - int, результат - int
-def fib(n:int) -> int:
+def fib(n: int) -> int:
     # пояснение и вывод ошибки
     assert n >= 0
     if n == 0 or n == 1:
         return n
-    return fib(n-1) + fib(n-2)
+    return fib(n - 1) + fib(n - 2)
+
+
 print(fib(32))
+
 
 # динамическое программирование
 def fib2(n):
@@ -32,21 +38,27 @@ def fib2(n):
     r = [None] * (n + 1)
     r[:2] = [0, 1]
     for i in range(2, n + 1):
-       r[i] = r[i-1] + r[i-2]
+        r[i] = r[i - 1] + r[i - 2]
     return r[n]
+
+
 print(fib2(32))
 
 # рекурсивное кэширование - это вариант динамического программирования с применением рекурсии
 # не лучший способ, но может быть полезен в некоторых ситуациях
 F = [None] * 10001
+
+
 def fib3(n):
     assert n >= 0 and n <= 10000
     if F[n] is None:
         if n <= 1:
             F[n] = n
         else:
-            F[n] = fib(n-1) + fib(n-2)
+            F[n] = fib(n - 1) + fib(n - 2)
     return F[n]
+
+
 print(fib3(32))
 
 # задача о рюкзаке (MP - полная. Это значит что единственным точным решением является полный перебор)

@@ -3,8 +3,10 @@ def matryoshka(n):
         print("Min matryoshka")
     else:
         print("matryoshka top, n=", n)
-        matryoshka(n-1)
+        matryoshka(n - 1)
         print("matryoshka bottom, n=", n)
+
+
 matryoshka(10)
 
 '''
@@ -28,24 +30,32 @@ def fractal_rectangle(A, B, C, D, deep):
 fractal_rectangle((50, 50), (950, 50), (950, 950), (50, 950), 100)
 '''
 
+
 def factorial(num):
-    assert num>=0, "Factorial <0"
+    assert num >= 0, "Factorial <0"
     if num == 0:
         return 1
-    return factorial(num-1) * num
+    return factorial(num - 1) * num
+
+
 print(factorial(5))
 
+
 def gcf(a, b):
-    return a if b == 0 else gcf(b, a%b)
+    return a if b == 0 else gcf(b, a % b)
+
+
 print(gcf(188, 400))
 
-def exp(a, n):# a >= 0
-    assert a>=0, "Number is less than 0"
+
+def exp(a, n):  # a >= 0
+    assert a >= 0, "Number is less than 0"
     if n == 0:
         return 1
     elif n % 2 == 0:
         return exp(a * a, n // 2) * a
     else:
-        return exp(a, n-1) * a
-print(exp(5, 5))
+        return exp(a, n - 1) * a
 
+
+print(exp(5, 5))

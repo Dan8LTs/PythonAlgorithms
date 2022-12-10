@@ -78,7 +78,10 @@ def is_braces_sequence_correct(s):
                 return False
     return is_empty()
 
+
 clear()
+
+
 # обратная польская нотация
 # [2, 6, 8, -, /] <==> (8-6)/2
 def opn(s):
@@ -95,8 +98,11 @@ def opn(s):
             z = eval(str(x) + token + str(y))
             push(z)
     return pop()
+
+
 print(opn([2, 7, "+", 5, "*"]))
- #тесты
+# тесты
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()

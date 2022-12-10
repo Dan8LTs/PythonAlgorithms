@@ -1,8 +1,3 @@
-import heapq
-ts = [52343, 23, 42, 32, 42, 342]
-heapq.heapify(ts)
-print(ts)
-
 # именованные кортежи
 import math, collections
 
@@ -53,24 +48,28 @@ L = LinkedList()
 L.insert(5)
 L.insert(10)
 print(L.pop())
+print()
 
 
 class Heap:
     def __init__(self):
         self.values = []
         self.size = 0
-# O(log_n)
+
+    # O(log_n)
     def add(self, x):
         self.values.append(x)
         self.size += 1
         self.sift_down(0)
         self.sift_up(self.size - 1)
-# O(log_n)
+
+    # O(log_n)
     def sift_up(self, i):
         while i != 0 and self.values[i] < self.values[(i - 1) // 2]:
             self.values[i], self.values[(i - 1) // 2] = self.values[(i - 1) // 2], self.values[i]
             i = (i - 1) // 2
-# O(log_n)
+
+    # O(log_n)
     def extract_min(self):
         if not self.size:
             return None
@@ -82,7 +81,8 @@ class Heap:
             self.sift_up(self.size - 1)
             self.sift_down(0)
         return tmp
-# O(log_n)
+
+    # O(log_n)
     def sift_down(self, i):
         while 2 * i + 1 < self.size:
             j = i
@@ -95,6 +95,7 @@ class Heap:
             self.values[i], self.values[j] = self.values[j], self.values[i]
             i = j
 
+
 h = Heap()
 h.add(3)
 h.add(5)
@@ -105,21 +106,32 @@ h.add(7)
 h.add(123123)
 print(h.values)
 
+
 # O(nlogn)
 def get_sorted_array(heap):
     arr = []
     while heap.size != 0:
         arr.append(heap.extract_min())
     return arr
+
+
 print(get_sorted_array(h))
 
 ts = [52343, 23, 42, 32, 42, 342]
-# O(nlogn)
 
+import heapq
+
+ts = [52343, 23, 42, 32, 42, 342]
+heapq.heapify(ts)
+print(ts)
+
+
+# O(nlogn)
 def heapify(arr):
     heap = Heap()
     for item in arr:
         heap.add(item)
     return heap
-print(heapify(ts).values)
 
+
+print(heapify(ts).values)

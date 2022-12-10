@@ -7,19 +7,17 @@ z = 0xFA0B
 print(z)
 print(hex(z))
 
-t = int('423F', base = 36)
+t = int('423F', base=36)
 print(t)
-
 
 # according to Horner's scheme
 base = 7
 x = int(input())
 d = []
 while x > 0:
-	digit = x % base 
-	d.append(digit)
-	x //= base
+    digit = x % base
+    d.append(digit)
+    x //= base
 d.reverse()
 for i in d:
-	print(i, end="")
-
+    print(i, end="")
