@@ -24,7 +24,7 @@ Graph = {'A': {'B'},
          'C': {'B', 'D'},
          'D': {'C'}}
 
-import networkx as nx=
+import networkx as nx
 Graph = nx.Graph()
 Graph.add_edge('A', 'B')
 Graph.add_edge('B', 'C')
