@@ -21,7 +21,6 @@ def merge(A: list, B: list):
         n += 1
     return C
 
-
 # A sort is said to be stable if it does not change the order of equal elements
 
 def merge_sort(A):
@@ -66,7 +65,7 @@ def quick_sort(A):
         k += 1
 
 
-M2 = [9, 1, 6, 6, 8, 7]
+M2 = [231, 12, 1, 22]
 quick_sort(M2)
 print(*M2)
 
